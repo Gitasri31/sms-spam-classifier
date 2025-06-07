@@ -21,7 +21,11 @@ translator = Translator()
 
 def transform_text(text):
     text = text.lower()
-    text = nltk.word_tokenize(text)
+    from nltk.tokenize import RegexpTokenizer
+tokenizer = RegexpTokenizer(r'\w+')
+text = tokenizer.tokenize(text)
+
+    
     y = [ps.stem(word) for word in text if word.isalnum() and word not in stopwords.words('english') and word not in string.punctuation]
     return " ".join(y)
 
