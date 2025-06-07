@@ -2,14 +2,16 @@ import streamlit as st
 import pickle
 import string
 import nltk
+import os
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from langdetect import detect
 from googletrans import Translator
 import time
 
-# Custom NLTK data path for deployment
-nltk.data.path.append('./nltk_data')
+nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
+nltk.data.path.append(nltk_data_path)
+
 
 nltk.download('punkt')
 nltk.download('stopwords')
