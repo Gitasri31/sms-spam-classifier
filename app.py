@@ -39,28 +39,28 @@ input_sms = st.text_area("✉️ Enter your message (English, Bengali, Hindi sup
 if st.button("🔍 Predict"):
     with st.spinner("Processing... Please wait."):
         try:
-            lang = detect(input_sms)
-            if lang != 'en':
-                translated = translator.translate(input_sms, dest='en')
-                translated_text = translated.text
-                st.info(f"🌐 Translated to English: {translated_text}")
-                final_input = translated_text
+            if not input_sms.strip():
+                st.error("❌ Please enter some text to analyze.")
             else:
-                final_input = input_sms
+                lang = detect(input_sms)
+                if lang != 'en':
+                    translated = translator.translate(input_sms, dest='en')
+                    translated_text = translated.text
+                    st.info(f"🌐 Translated to English: {translated_text}")
+                    final_input = translated_text
+                else:
+                    final_input = input_sms
 
-            # Preprocess
-            transformed_sms = transform_text(final_input)
+                transformed_sms = transform_text(final_input)
+                vector_input = tfidf.transform([transformed_sms])
+                result = model.predict(vector_input)[0]
 
-            # Vectorize and Predict
-            vector_input = tfidf.transform([transformed_sms])
-            result = model.predict(vector_input)[0]
+                st.markdown("---")
+                if result == 1:
+                    st.error("🚫 This message is **SPAM**!", icon="🚫")
+                else:
+                    st.success("✅ This message is **NOT SPAM**!", icon="✅")
+                st.markdown("---")
 
-            # Display result
-            st.markdown("---")
-            if result == 1:
-                st.error("🚫 This message is **SPAM**!", icon="🚫")
-            else:
-                st.success("✅ This message is **NOT SPAM**!", icon="✅")
-            st.markdown("---")
-        except:
-            st.error("❌ Could not detect or translate the message. Please enter valid text.")
+        except Exception as e:
+            st.error(f"❌ Error: {str(e)}. Please enter valid text.")
