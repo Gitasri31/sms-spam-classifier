@@ -9,22 +9,24 @@ from langdetect import detect
 from googletrans import Translator
 import time
 
+# Custom NLTK path
 nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
 nltk.data.path.append(nltk_data_path)
 
-
+# Download necessary NLTK resources
 nltk.download('punkt', download_dir=nltk_data_path)
 nltk.download('stopwords', download_dir=nltk_data_path)
 
+# Initialize tools
 ps = PorterStemmer()
 translator = Translator()
 
+# Text preprocessing
 def transform_text(text):
     text = text.lower()
     from nltk.tokenize import RegexpTokenizer
-tokenizer = RegexpTokenizer(r'\w+')
-text = tokenizer.tokenize(text)
-
+    tokenizer = RegexpTokenizer(r'\w+')
+    text = tokenizer.tokenize(text)
     
     y = [ps.stem(word) for word in text if word.isalnum() and word not in stopwords.words('english') and word not in string.punctuation]
     return " ".join(y)
@@ -35,12 +37,9 @@ model = pickle.load(open('voting_model.pkl', 'rb'))
 
 # Streamlit interface
 st.set_page_config(page_title="Spam Detector", page_icon="🚫", layout="centered")
-
 st.title("📩 Multilingual SMS Spam Classifier")
 
 input_sms = st.text_area("✉️ Enter your message (English, Bengali, Hindi supported):", height=150)
-
-
 
 if st.button("🔍 Predict"):
     with st.spinner("Processing... Please wait."):
