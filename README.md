@@ -30,7 +30,7 @@ Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 ![English](Screenshots/Result(English).png)
 
 
-### 🇮🇳 Hindi Result
+###  Hindi Result
 ![Hindi](Screenshots/Result%20(Hindi).png)
 
 ###  Bengali Result
