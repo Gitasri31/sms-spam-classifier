@@ -1,24 +1,36 @@
-SMS Spam Classifier(SPAM SNIPER)
-This project builds a machine learning model to classify SMS messages as spam or not spam (ham). The goal is to automatically detect and filter unwanted spam messages, improving user communication experience.
+# SMS Spam Classifier
 
-The system uses text preprocessing and various machine learning algorithms like Naive Bayes, SVM, and Random Forest to achieve high accuracy in detecting spam messages. It includes evaluation metrics such as accuracy, precision, recall, and F1 score to measure performance.
+## Project Overview  
+This is a machine learning project to classify SMS messages as **spam** or **ham (not spam)**. The model uses NLP techniques like TF-IDF vectorization combined with a Voting Classifier to improve accuracy.
 
-You can use this project to understand how spam detection works, train your own models, and test SMS messages in real time.
-Dataset: The SMS dataset used is publicly available and contains labeled spam and ham messages.
+## Features  
+- Predicts whether a given SMS is spam or ham  
+- Interactive web interface deployed using Streamlit  
+- Uses a combination of Multinomial Naive Bayes, Random Forest, and SVM classifiers
 
-How to run:
+## Tech Stack  
+- Python  
+- scikit-learn  
+- Streamlit  
+- NLTK (for text preprocessing)  
 
-Clone the repository
+## Run thr app locally
+streamlit run app.py
 
-Install dependencies
+## Usage
+Input any SMS message in the text box
+Click Predict
+See if it’s spam or ham instantly!
 
-Run the main script to train and test the model
+## Live Demo
+Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 
-Future work:
+Screenshots
 
-Add deep learning models
+License
+This project is licensed under the MIT License.
 
-Build a web interface for live SMS detection
 
-Feel free to contribute by opening issues or pull requests!
+
+
 
