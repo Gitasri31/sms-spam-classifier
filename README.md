@@ -26,9 +26,14 @@ See if it’s spam or ham instantly!
 Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 
 ## Screenshots
-Screenshots/Result (English).png
-Screenshots/Result (Hindi).png
-Screenshots/Result (Bengali).png
+###  English Result
+![English](Screenshots/Result%20(English).png)
+
+### 🇮🇳 Hindi Result
+![Hindi](Screenshots/Result%20(Hindi).png)
+
+###  Bengali Result
+![Bengali](Screenshots/Result%20(Bengali).png)
 
 License
 This project is licensed under the MIT License.
