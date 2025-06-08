@@ -25,7 +25,10 @@ See if it’s spam or ham instantly!
 ## Live Demo
 Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 
-Screenshots
+## Screenshots
+Screenshots/Result (English).png
+Screenshots/Result (Hindi).png
+Screenshots/Result (Bengali).png
 
 License
 This project is licensed under the MIT License.
