@@ -27,7 +27,8 @@ Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 
 ## Screenshots
 ###  English Result
-![English](Screenshots/Result%20(English).png)
+![English](Screenshots/Result(English).png)
+
 
 ### 🇮🇳 Hindi Result
 ![Hindi](Screenshots/Result%20(Hindi).png)
