@@ -14,7 +14,7 @@ This is a machine learning project to classify SMS messages as **spam** or **ham
 - Streamlit  
 - NLTK (for text preprocessing)  
 
-## Run thr app locally
+## Run the app locally
 streamlit run app.py
 
 ## Usage
@@ -36,8 +36,10 @@ Try the app here: https://gitasri-sms-spam-classifier.streamlit.app/
 ###  Bengali Result
 ![Bengali](Screenshots/Result%20(Bengali).png)
 
-License
-This project is licensed under the MIT License.
+## 📝 License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
 
 
 
